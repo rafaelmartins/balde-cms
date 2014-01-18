@@ -14,6 +14,8 @@
 #include <mkdio.h>
 #include <string.h>
 
+#include "markdown.h"
+
 
 gchar*
 parse_markdown(balde_app_t *app, const gchar *mkd_source)
