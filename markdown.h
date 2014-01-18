@@ -6,8 +6,8 @@
  * See the file COPYING.
  */
 
-#ifndef _BALDE_CMS_MKD_PARSER
-#define _BALDE_CMS_MKD_PARSER
+#ifndef _BALDE_MARKDOWN
+#define _BALDE_MARKDOWN
 
 #include <glib.h>
 #include <balde.h>
