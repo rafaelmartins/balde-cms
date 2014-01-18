@@ -15,7 +15,12 @@ AS_IF([test "x$ac_cv_prog_cc_c99" = "xno"], [
   AC_MSG_ERROR([no C99 compiler found, balde-cms requires a C99 compiler.])
 ])
 
+AC_SEARCH_LIBS([mkd_in], [markdown], ,
+  AC_MSG_ERROR([mkd_in not found. please install the discount markdown parser library.])
+)
+
 PKG_PROG_PKG_CONFIG
+PKG_CHECK_MODULES([GLIB], [glib-2.0 >= 2.34])
 PKG_CHECK_MODULES([BALDE], [balde])
 
 AC_CONFIG_FILES([

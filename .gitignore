@@ -19,3 +19,7 @@ Makefile
 /build-aux/*
 !/build-aux/git-version-gen
 /.version
+
+*.o
+.deps
+balde-cms

@@ -1,4 +1,4 @@
 balde-cms
 =========
 
-A simple Content Management System build with balde microframework
+A simple CMS built with balde microframework
