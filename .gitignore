@@ -22,4 +22,5 @@ Makefile
 
 *.o
 .deps
+.dirstamp
 balde-cms

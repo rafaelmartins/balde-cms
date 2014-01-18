@@ -1,4 +1,5 @@
-SUBDIRS = 
+SUBDIRS = \
+	tests
 
 ACLOCAL_AMFLAGS = -I m4
 
@@ -32,3 +33,8 @@ balde_cms_LDADD = \
 	$(AM_LDADD) \
 	$(GLIB_LIBS) \
 	$(BALDE_LIBS)
+
+if USE_VALGRIND
+valgrind: all
+	$(MAKE) -C tests valgrind
+endif

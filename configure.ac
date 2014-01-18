@@ -19,12 +19,32 @@ AC_SEARCH_LIBS([mkd_in], [markdown], ,
   AC_MSG_ERROR([mkd_in not found. please install the discount markdown parser library.])
 )
 
+AC_ARG_WITH([valgrind], AS_HELP_STRING([--without-valgrind],
+            [ignore presence of valgrind]))
+AS_IF([test "x$with_valgrind" != "xno"], [
+  AC_PATH_PROG([valgrind], [valgrind])
+  AS_IF([test "x$ac_cv_path_valgrind" = "x"], [
+    have_valgrind=no
+  ], [
+    have_valgrind=yes
+  ])
+])
+AS_IF([test "x$have_valgrind" = "xyes"], , [
+  AS_IF([test "x$with_valgrind" = "xyes"], [
+    AC_MSG_ERROR([valgrind requested but not found])
+  ])
+])
+AM_CONDITIONAL([USE_VALGRIND], [test "x$have_valgrind" = "xyes"])
+VALGRIND="$ac_cv_path_valgrind"
+AC_SUBST(VALGRIND)
+
 PKG_PROG_PKG_CONFIG
 PKG_CHECK_MODULES([GLIB], [glib-2.0 >= 2.34])
 PKG_CHECK_MODULES([BALDE], [balde])
 
 AC_CONFIG_FILES([
     Makefile
+    tests/Makefile
 ])
 AC_OUTPUT
 
