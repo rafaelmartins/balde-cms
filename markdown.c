@@ -25,13 +25,12 @@ parse_markdown(balde_app_t *app, const gchar *mkd_source)
     MMIOT *doc = mkd_string(mkd_source, strlen(mkd_source), MKD_TABSTOP);
     if (doc == NULL) {
         balde_abort_set_error(app, 500);
-        goto point1;
+        goto point0;
     }
     mkd_compile(doc, MKD_TABSTOP);
     mkd_document(doc, &text);
     rv = g_strdup(text);
-point1:
-    mkd_cleanup(doc);
 point0:
+    mkd_cleanup(doc);
     return rv;
 }
