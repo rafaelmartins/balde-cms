@@ -5,8 +5,7 @@ TESTS = \
 	$(check_PROGRAMS)
 
 check_markdown_SOURCES = \
-	check_markdown.c \
-	../markdown.c
+	check_markdown.c
 
 AM_CFLAGS = \
 	$(all_includes) \

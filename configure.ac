@@ -44,6 +44,7 @@ PKG_CHECK_MODULES([BALDE], [balde])
 
 AC_CONFIG_FILES([
     Makefile
+    src/Makefile
     tests/Makefile
 ])
 AC_OUTPUT

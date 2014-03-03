@@ -13,7 +13,7 @@
 #include <glib.h>
 #include <balde.h>
 
-#include "../markdown.h"
+#include "../src/markdown.c"
 
 
 void
